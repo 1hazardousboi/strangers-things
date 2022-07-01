@@ -1,4 +1,4 @@
-import { Home, LogIn, Profile, NavBar } from "components";
+import { Home, LogIn, Profile, NavBar, Register } from "components";
 import { Routes, Route } from "react-router-dom";
 
 export default function App() {
@@ -9,6 +9,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/LogIn" element={<LogIn />} />
         <Route path="/Profile" element={<Profile />} />
+        <Route path="/Register" element={<Register />} />
       </Routes>
     </>
   );
