@@ -14,7 +14,12 @@ export default function App() {
       <NavBar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/LogIn" element={<LogIn />} />
+        <Route
+          path="/LogIn"
+          element={
+            <LogIn setToken={setToken} setCurrentUser={setCurrentUser} />
+          }
+        />
         <Route
           path="/Profile"
           element={<Profile token={token} currentUser={currentUser} />}
