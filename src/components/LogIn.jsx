@@ -10,9 +10,10 @@ export default function Login({ setToken, setCurrentUser }) {
   let navigate = useNavigate();
 
   return (
-    <div>
-      <h4>Login:</h4>
+    <div class="login">
+      <h3>Log In:</h3>
       <form
+        class="formStyle"
         onSubmit={async (e) => {
           e.preventDefault();
           const result = await loginUser(username, password);
@@ -33,9 +34,13 @@ export default function Login({ setToken, setCurrentUser }) {
           type="password"
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button type="submit">Submit!</button>
+        <button class="submit" type="submit">
+          Submit
+        </button>
       </form>
-      <Link to="/Register">Don't have an account?</Link>
+      <Link class="loginHelper" to="/Register">
+        Don't have an account?
+      </Link>
     </div>
   );
 }
