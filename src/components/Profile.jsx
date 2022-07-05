@@ -1,8 +1,6 @@
 import React from "react";
 
 export default function Profile({ token, currentUser }) {
-  console.log(token);
-  console.log(currentUser);
   return (
     <div>
       <h3>Profile</h3>
