@@ -14,10 +14,10 @@ export default function Register({ setToken, setCurrentUser }) {
           e.preventDefault();
           const result = await createUser(username, password);
           const token = result.data.token;
-          setCurrentUser(result);
+          setCurrentUser(username);
           setToken(token);
           localStorage.setItem("token", token);
-          navigate("/");
+          navigate("/Profile");
         }}
       >
         <input value={username} onChange={(e) => setUsername(e.target.value)} />

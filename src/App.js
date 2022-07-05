@@ -4,10 +4,7 @@ import { Routes, Route } from "react-router-dom";
 
 export default function App() {
   const [token, setToken] = useState(null);
-  const [currentUser, setCurrentUser] = useState({
-    username: "",
-    password: "",
-  });
+  const [currentUser, setCurrentUser] = useState("");
 
   return (
     <>

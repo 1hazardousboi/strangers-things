@@ -2,11 +2,12 @@ import React, { useState } from "react";
 
 import { loginUser } from "../api/users";
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
-export default function Login({ setToken }) {
+export default function Login({ setToken, setCurrentUser }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  let navigate = useNavigate();
 
   return (
     <div>
@@ -17,8 +18,8 @@ export default function Login({ setToken }) {
           const result = await loginUser(username, password);
           localStorage.setItem("token", result.data.token);
           setToken(result.data.token);
-          setPassword("");
-          setUsername("");
+          setCurrentUser(username);
+          navigate("/Profile");
         }}
       >
         <input
