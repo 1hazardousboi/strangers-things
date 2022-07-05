@@ -20,10 +20,15 @@ export default function Register({ setToken, setCurrentUser }) {
           navigate("/Profile");
         }}
       >
-        <input value={username} onChange={(e) => setUsername(e.target.value)} />
+        <input
+          value={username}
+          placeholder="username"
+          onChange={(e) => setUsername(e.target.value)}
+        />
         <input
           value={password}
           type="password"
+          placeholder="username"
           onChange={(e) => setPassword(e.target.value)}
         />
         <button type="submit">Submit</button>
