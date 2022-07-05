@@ -7,10 +7,10 @@ export default function Register({ setToken, setCurrentUser }) {
   const [password, setPassword] = useState("");
   let navigate = useNavigate();
   return (
-    <div class="login">
+    <div className="login">
       <h3>Register:</h3>
       <form
-        class="formStyle"
+        className="formStyle"
         onSubmit={async (e) => {
           e.preventDefault();
           const result = await createUser(username, password);
@@ -34,7 +34,7 @@ export default function Register({ setToken, setCurrentUser }) {
         />
         <button type="submit">Submit</button>
       </form>
-      <Link class="loginHelper" to="/LogIn">
+      <Link className="loginHelper" to="/LogIn">
         Already have an account?
       </Link>
     </div>

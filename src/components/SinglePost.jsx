@@ -4,16 +4,16 @@ export default function SinglePost({ post }) {
   // console.log("Current Post", post);
 
   return (
-    <div class="postCard">
+    <div className="postCard">
       <ul>
-        <li class="cardTitle">{post.title}</li>
+        <li className="cardTitle">{post.title}</li>
         <li>{post.description}</li>
         <li>Location: {post.location}</li>
         <li>{post.willDeliver ? "Free Delivery!" : "Pick it up yourself!"}</li>
         <li>Made by: {post.author.username}</li>
-        <li class="cardPrice">Price: {post.price}</li>
+        <li className="cardPrice">Price: {post.price}</li>
       </ul>
-      <div class="messageButton">
+      <div className="messageButton">
         <button>Message This Seller!</button>
       </div>
     </div>
