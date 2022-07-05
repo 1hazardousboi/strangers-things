@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function SinglePost({ post }) {
-  console.log("Current Post", post);
+  // console.log("Current Post", post);
 
   return (
     <div>
