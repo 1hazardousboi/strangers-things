@@ -6,7 +6,7 @@ export default function NewPost({ token }) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
-  const [location, setLocation] = useState("");
+  const [location, setLocation] = useState("[On Request]");
   const [willDeliver, setWillDeliver] = useState(false);
 
   let navigate = useNavigate();
