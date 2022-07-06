@@ -1,4 +1,12 @@
-import { Home, LogIn, Profile, NavBar, Register, NewPost } from "components";
+import {
+  Home,
+  LogIn,
+  Profile,
+  NavBar,
+  Register,
+  NewPost,
+  EditPost,
+} from "components";
 import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import { fetchMe } from "api/users";
@@ -6,6 +14,7 @@ import { fetchMe } from "api/users";
 export default function App() {
   const [token, setToken] = useState(null);
   const [currentUser, setCurrentUser] = useState("");
+  const [targetPost, setTargetPost] = useState({});
 
   useEffect(() => {
     const localStorageToken = localStorage.getItem("token");
@@ -18,13 +27,16 @@ export default function App() {
     if (localStorageToken) {
       getMe();
     }
-  }, [token]);
+  }, [token]); // Also update on page refresh? Happens after everything renders? Unsure if needs optimization.
 
   return (
     <>
       <NavBar />
       <Routes>
-        <Route path="/" element={<Home token={token} />} />
+        <Route
+          path="/"
+          element={<Home token={token} setTargetPost={setTargetPost} />}
+        />
         <Route
           path="/LogIn"
           element={
@@ -42,6 +54,16 @@ export default function App() {
           }
         />
         <Route path="/NewPost" element={<NewPost token={token} />} />
+        <Route
+          path="/EditPost"
+          element={
+            <EditPost
+              token={token}
+              targetPost={targetPost}
+              setTargetPost={setTargetPost}
+            />
+          }
+        />
       </Routes>
     </>
   );

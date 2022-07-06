@@ -1,7 +1,11 @@
 import React from "react";
+import { deletePost } from "api/posts";
+import { useNavigate } from "react-router-dom";
 
-export default function SinglePost({ post }) {
-  console.log("Current Post", post);
+export default function SinglePost({ token, post, setTargetPost }) {
+  // console.log("Current Post", post);  // viewing each post
+
+  let navigate = useNavigate();
 
   return (
     <div id={post._id} className="postCard">
@@ -17,8 +21,23 @@ export default function SinglePost({ post }) {
         {/* <button>Message This Seller!</button> */}
         {post.isAuthor ? (
           <div className="postFunctions">
-            <button>Edit</button>
-            <button>Delete</button>
+            <button
+              onClick={() => {
+                setTargetPost(post);
+                navigate("/EditPost");
+              }}
+            >
+              Edit
+            </button>
+
+            <button
+              onClick={async (e) => {
+                const result = await deletePost(token, post);
+                window.location.reload(); // Not optimal to refresh page every delete, temporary fix!!
+              }}
+            >
+              Delete
+            </button>
           </div>
         ) : (
           <div className="postFunctions">
