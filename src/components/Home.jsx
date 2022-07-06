@@ -3,11 +3,11 @@ import { useState, useEffect } from "react";
 import { fetchPosts } from "api/posts";
 import SinglePost from "./SinglePost";
 
-export default function Home() {
+export default function Home({ token }) {
   const [posts, setPosts] = useState([]);
   useEffect(() => {
     const getPosts = async () => {
-      const result = await fetchPosts();
+      const result = await fetchPosts(token);
       setPosts(result);
     };
     getPosts();

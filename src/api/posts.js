@@ -1,7 +1,13 @@
 const url = "https://strangers-things.herokuapp.com/api/2206-ftb-mt-web-ft";
 
-export const fetchPosts = async () => {
-  const response = await fetch(`${url}/posts`);
+export const fetchPosts = async (token) => {
+  const response = await fetch(`${url}/posts`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+  });
   const result = await response.json();
   return result.data.posts;
 };

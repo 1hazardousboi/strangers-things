@@ -1,10 +1,10 @@
 import React from "react";
 
 export default function SinglePost({ post }) {
-  // console.log("Current Post", post);
+  console.log("Current Post", post);
 
   return (
-    <div className="postCard">
+    <div id={post._id} className="postCard">
       <ul>
         <li className="cardTitle">{post.title}</li>
         <li>{post.description}</li>
@@ -14,7 +14,12 @@ export default function SinglePost({ post }) {
         <li className="cardPrice">Price: {post.price}</li>
       </ul>
       <div className="messageButton">
-        <button>Message This Seller!</button>
+        {/* <button>Message This Seller!</button> */}
+        {post.isAuthor ? (
+          <button>Edit Post</button>
+        ) : (
+          <button>Message This Seller!</button>
+        )}
       </div>
     </div>
   );
