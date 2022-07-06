@@ -16,9 +16,14 @@ export default function SinglePost({ post }) {
       <div className="messageButton">
         {/* <button>Message This Seller!</button> */}
         {post.isAuthor ? (
-          <button>Edit Post</button>
+          <div className="postFunctions">
+            <button>Edit</button>
+            <button>Delete</button>
+          </div>
         ) : (
-          <button>Message This Seller!</button>
+          <div className="postFunctions">
+            <button>Message This Seller!</button>
+          </div>
         )}
       </div>
     </div>
