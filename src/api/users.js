@@ -33,3 +33,15 @@ export const loginUser = async (username, password) => {
   const result = await response.json();
   return result;
 };
+
+export const fetchMe = async (token) => {
+  const response = await fetch(`${url}/test/me`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+  });
+  const result = await response.json();
+  return result;
+};

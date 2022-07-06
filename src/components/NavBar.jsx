@@ -9,6 +9,7 @@ export default function NavBar() {
         <Link to="/">Home </Link>
         <Link to="/Profile">Profile </Link>
         <Link to="/Login">Login </Link>
+        <Link to="/NewPost">New Post</Link>
       </nav>
     </header>
   );
