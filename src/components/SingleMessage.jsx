@@ -3,11 +3,11 @@ import React from "react";
 export default function SingleMessage({ message }) {
   console.log(message);
   return (
-    <div class="messageBox">
+    <div className="messageCard">
       <ul>
-        <li>Regarding: {message.post.title}</li>
-        <li>Messages! = {message.content}</li>
-        <li>Username: {message.fromUser.username}</li>
+        <li className="messageSender">From: {message.fromUser.username}</li>
+        <li className="messagePost">RE: {message.post.title}</li>
+        <li className="messageBody">{message.content}</li>
       </ul>
     </div>
   );

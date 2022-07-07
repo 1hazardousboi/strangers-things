@@ -21,14 +21,16 @@ export default function Profile({ token, currentUser, setTargetPost }) {
 
   return (
     <div>
-      <h3>Profile</h3>
+      <h2>Profile</h2>
       <h4>User: {currentUser}</h4>
       <h4>Token: {token}</h4>
+      <h2>Messages</h2>
       <div>
         {messages.map((message, index) => {
           return <SingleMessage key={`Key: ${index}`} message={message} />;
         })}
       </div>
+      <h2>Posts</h2>
       <div>
         {posts.map((post, index) => {
           return post.active ? (

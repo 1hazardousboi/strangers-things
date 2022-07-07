@@ -13,7 +13,7 @@ export default function Message({ token, targetPost, setTargetPost }) {
   };
 
   return (
-    <div>
+    <div className="messageBox">
       <form onSubmit={handleSubmit}>
         <input
           value={message}

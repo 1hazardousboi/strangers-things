@@ -12,7 +12,7 @@ export default function NewPost({ token }) {
   let navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const result = await createPost(token, {
+    createPost(token, {
       title,
       description,
       price,

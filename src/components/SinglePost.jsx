@@ -24,7 +24,7 @@ export default function SinglePost({ token, post, setTargetPost, onProfile }) {
         <li>Made by: {post.author.username}</li>
         <li className="cardPrice">Price: {post.price}</li>
       </ul>
-      <div className="messageButton">
+      <div className="buttons">
         {post.isAuthor || onProfile ? (
           <div className="postFunctions">
             <button
