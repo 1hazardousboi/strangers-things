@@ -32,13 +32,10 @@ export default function Home({ token, setTargetPost }) {
 
   const filteredPosts = posts.filter((post) => postMatches(post, searchTerm));
   const postsToDisplay = searchTerm.length ? filteredPosts : posts;
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  };
 
   return (
     <div>
-      <form className="formStyle" onSubmit={handleSubmit}>
+      <form className="formStyle">
         <input
           value={searchTerm}
           placeholder="search here!"
