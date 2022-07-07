@@ -9,7 +9,11 @@ export default function NavBar({ token, setToken, setCurrentUser }) {
       </Link>
       <nav>
         <Link to="/">Home </Link>
-        <Link to="/Profile">Profile </Link>
+        {token ? (
+          <Link to="/Profile">Profile</Link>
+        ) : (
+          <Link to="/Login">Profile</Link>
+        )}{" "}
         {token ? (
           <Link
             to="/Login"
