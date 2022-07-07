@@ -5,7 +5,7 @@ export default function NavBar({ token, setToken, setCurrentUser }) {
   return (
     <header>
       <Link to="/" id="mainIcon">
-        Strangers Things
+        Strangers' Things
       </Link>
       <nav>
         <Link to="/">Home </Link>

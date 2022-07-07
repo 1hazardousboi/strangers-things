@@ -20,7 +20,7 @@ export default function Profile({ token, currentUser, setTargetPost }) {
   }, [token]);
 
   return (
-    <div>
+    <div className="profilePage">
       <h3>{currentUser}'s Profile!</h3>
       <h2>Messages</h2>
       <div>

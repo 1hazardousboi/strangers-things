@@ -1,9 +1,12 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
-export default function SingleMessage({ message, post, setTargetPost }) {
-  console.log(message);
-  let navigate = useNavigate();
+export default function SingleMessage({
+  message,
+  //  post,
+  //  setTargetPost
+}) {
+  // let navigate = useNavigate();
 
   return (
     <div className="messageCard">
