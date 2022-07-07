@@ -2,8 +2,8 @@ import React from "react";
 import { deletePost, messagePost } from "api/posts";
 import { useNavigate } from "react-router-dom";
 
-export default function SinglePost({ token, post, setTargetPost }) {
-  // console.log("Current Post", post);  // viewing each post
+export default function SinglePost({ token, post, setTargetPost, onProfile }) {
+  console.log("Current Post", post); // viewing each post
 
   let navigate = useNavigate();
 
@@ -25,7 +25,7 @@ export default function SinglePost({ token, post, setTargetPost }) {
         <li className="cardPrice">Price: {post.price}</li>
       </ul>
       <div className="messageButton">
-        {post.isAuthor ? (
+        {post.isAuthor || onProfile ? (
           <div className="postFunctions">
             <button
               onClick={() => {

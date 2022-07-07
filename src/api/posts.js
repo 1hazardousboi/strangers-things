@@ -77,3 +77,15 @@ export const messagePost = async (token, post, message) => {
     }),
   });
 };
+
+export const fetchProfile = async (token) => {
+  const response = await fetch(`${url}/users/me`, {
+    method: "GET",
+    headers: {
+      "content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+  });
+  const result = await response.json();
+  return result;
+};

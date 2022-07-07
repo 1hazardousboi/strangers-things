@@ -46,7 +46,13 @@ export default function App() {
         />
         <Route
           path="/Profile"
-          element={<Profile token={token} currentUser={currentUser} />}
+          element={
+            <Profile
+              token={token}
+              currentUser={currentUser}
+              setTargetPost={setTargetPost}
+            />
+          }
         />
         <Route
           path="/Register"
