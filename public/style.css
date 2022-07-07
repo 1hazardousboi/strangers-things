@@ -109,3 +109,11 @@ ul {
 .messagePost {
   font-style: italic;
 }
+
+.deleteButton {
+  margin-left: 10px;
+}
+
+button {
+  padding: 2px;
+}

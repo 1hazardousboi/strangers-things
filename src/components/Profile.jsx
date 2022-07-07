@@ -21,9 +21,7 @@ export default function Profile({ token, currentUser, setTargetPost }) {
 
   return (
     <div>
-      <h2>Profile</h2>
-      <h4>User: {currentUser}</h4>
-      <h4>Token: {token}</h4>
+      <h3>{currentUser}'s Profile!</h3>
       <h2>Messages</h2>
       <div>
         {messages.map((message, index) => {

@@ -24,7 +24,11 @@ export default function NavBar({ token, setToken, setCurrentUser }) {
         ) : (
           <Link to="/Login">Log In </Link>
         )}
-        <Link to="/NewPost">New Post</Link>
+        {token ? (
+          <Link to="/NewPost">New Post</Link>
+        ) : (
+          <Link to="/Login">New Post</Link>
+        )}
       </nav>
     </header>
   );

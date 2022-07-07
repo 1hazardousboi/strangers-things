@@ -3,7 +3,7 @@ import { deletePost } from "api/posts";
 import { useNavigate } from "react-router-dom";
 
 export default function PostCard({ token, post, setTargetPost, onProfile }) {
-  console.log("Current Post", post); // viewing each post
+  // console.log("Current Post", post); // viewing each post
 
   let navigate = useNavigate();
 
@@ -38,10 +38,11 @@ export default function PostCard({ token, post, setTargetPost, onProfile }) {
             </button>
 
             <button
+              class="deleteButton"
               onClick={() => {
                 deletePost(token, post);
                 window.location.reload();
-                // Not optimal to refresh page every delete, temporary fix!!
+                // Not optimal to rerender the page on delete, temporary fix!!
               }}
             >
               Delete

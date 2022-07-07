@@ -12,14 +12,16 @@ export default function SingleMessage({ message, post, setTargetPost }) {
         <li className="messagePost">RE: {message.post.title}</li>
         <li className="messageBody">{message.content}</li>
       </ul>
-      <button
+      {/* <button
         onClick={() => {
           setTargetPost(post);
           navigate("/Message");
         }}
       >
         Reply
-      </button>
+      </button> */}
     </div>
   );
 }
+
+// Reply button needs to be fixed!!
