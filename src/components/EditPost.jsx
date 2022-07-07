@@ -11,24 +11,23 @@ export default function EditPost({ token, targetPost, setTargetPost }) {
 
   let navigate = useNavigate();
   const postId = targetPost._id;
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    editPost(token, {
+      postId,
+      title,
+      description,
+      price,
+      location,
+      willDeliver,
+    });
+    setTargetPost({});
+    navigate("/");
+  };
 
   return (
     <div>
-      <form
-        onSubmit={async (e) => {
-          e.preventDefault();
-          const result = await editPost(token, {
-            postId,
-            title,
-            description,
-            price,
-            location,
-            willDeliver,
-          });
-          setTargetPost({});
-          navigate("/");
-        }}
-      >
+      <form onSubmit={handleSubmit}>
         <input
           value={title}
           onChange={(e) => setTitle(e.target.value)}

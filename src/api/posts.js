@@ -35,7 +35,7 @@ export const createPost = async (token, post) => {
 };
 
 export const deletePost = async (token, post) => {
-  const response = await fetch(`${url}/posts/${post._id}`, {
+  fetch(`${url}/posts/${post._id}`, {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",
@@ -45,7 +45,7 @@ export const deletePost = async (token, post) => {
 };
 
 export const editPost = async (token, post) => {
-  const response = await fetch(`${url}/posts/${post.postId}`, {
+  fetch(`${url}/posts/${post.postId}`, {
     method: "PATCH",
     headers: {
       "Content-Type": "application/json",
@@ -64,7 +64,7 @@ export const editPost = async (token, post) => {
 };
 
 export const messagePost = async (token, post, message) => {
-  const response = await fetch(`${url}/posts/${post._id}/messages`, {
+  fetch(`${url}/posts/${post._id}/messages`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

@@ -10,22 +10,21 @@ export default function NewPost({ token }) {
   const [willDeliver, setWillDeliver] = useState(false);
 
   let navigate = useNavigate();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const result = await createPost(token, {
+      title,
+      description,
+      price,
+      location,
+      willDeliver,
+    });
+    navigate("/");
+  };
 
   return (
     <div>
-      <form
-        onSubmit={async (e) => {
-          e.preventDefault();
-          const result = await createPost(token, {
-            title,
-            description,
-            price,
-            location,
-            willDeliver,
-          });
-          navigate("/");
-        }}
-      >
+      <form onSubmit={handleSubmit}>
         <input
           value={title}
           onChange={(e) => setTitle(e.target.value)}

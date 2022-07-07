@@ -1,5 +1,5 @@
 import React from "react";
-import { deletePost, messagePost } from "api/posts";
+import { deletePost } from "api/posts";
 import { useNavigate } from "react-router-dom";
 
 export default function SinglePost({ token, post, setTargetPost, onProfile }) {

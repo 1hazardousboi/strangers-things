@@ -5,16 +5,16 @@ import { messagePost } from "api/posts";
 export default function Message({ token, targetPost, setTargetPost }) {
   let navigate = useNavigate();
   const [message, setMessage] = useState("");
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    messagePost(token, targetPost, message);
+    setTargetPost({});
+    navigate("/Profile");
+  };
+
   return (
     <div>
-      <form
-        onSubmit={async (e) => {
-          e.preventDefault();
-          const result = await messagePost(token, targetPost, message);
-          setTargetPost({});
-          navigate("/Profile");
-        }}
-      >
+      <form onSubmit={handleSubmit}>
         <input
           value={message}
           onChange={(e) => setMessage(e.target.value)}

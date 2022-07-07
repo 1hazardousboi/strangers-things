@@ -8,7 +8,7 @@ export default function Profile({ token, currentUser, setTargetPost }) {
   const [posts, setPosts] = useState([]);
   const [messages, setMessages] = useState([]);
 
-  let onProfile = true;
+  const onProfile = true;
 
   useEffect(() => {
     const getProfile = async () => {
@@ -18,6 +18,7 @@ export default function Profile({ token, currentUser, setTargetPost }) {
     };
     getProfile();
   }, [token]);
+
   return (
     <div>
       <h3>Profile</h3>
