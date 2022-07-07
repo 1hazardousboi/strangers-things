@@ -33,7 +33,11 @@ export default function App() {
 
   return (
     <>
-      <NavBar />
+      <NavBar
+        token={token}
+        setToken={setToken}
+        setCurrentUser={setCurrentUser}
+      />
       <Routes>
         <Route
           path="/"

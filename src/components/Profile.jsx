@@ -27,7 +27,13 @@ export default function Profile({ token, currentUser, setTargetPost }) {
       <h2>Messages</h2>
       <div>
         {messages.map((message, index) => {
-          return <SingleMessage key={`Key: ${index}`} message={message} />;
+          return (
+            <SingleMessage
+              key={`Key: ${index}`}
+              message={message}
+              setTargetPost={setTargetPost}
+            />
+          );
         })}
       </div>
       <h2>Posts</h2>

@@ -51,8 +51,12 @@ export default function PostCard({ token, post, setTargetPost, onProfile }) {
           <div className="postFunctions">
             <button
               onClick={() => {
-                setTargetPost(post);
-                navigate("/Message");
+                if (token) {
+                  setTargetPost(post);
+                  navigate("/Message");
+                } else {
+                  navigate("/Login");
+                }
               }}
             >
               Message This Seller!
