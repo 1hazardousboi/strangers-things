@@ -62,3 +62,18 @@ export const editPost = async (token, post) => {
     }),
   });
 };
+
+export const messagePost = async (token, post, message) => {
+  const response = await fetch(`${url}/posts/${post._id}/messages`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify({
+      message: {
+        content: message,
+      },
+    }),
+  });
+};

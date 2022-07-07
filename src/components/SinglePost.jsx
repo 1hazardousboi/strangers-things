@@ -1,5 +1,5 @@
 import React from "react";
-import { deletePost } from "api/posts";
+import { deletePost, messagePost } from "api/posts";
 import { useNavigate } from "react-router-dom";
 
 export default function SinglePost({ token, post, setTargetPost }) {
@@ -48,7 +48,14 @@ export default function SinglePost({ token, post, setTargetPost }) {
           </div>
         ) : (
           <div className="postFunctions">
-            <button>Message This Seller!</button>
+            <button
+              onClick={() => {
+                setTargetPost(post);
+                navigate("/Message");
+              }}
+            >
+              Message This Seller!
+            </button>
           </div>
         )}
       </div>

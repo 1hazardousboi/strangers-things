@@ -6,6 +6,7 @@ import {
   Register,
   NewPost,
   EditPost,
+  Message,
 } from "components";
 import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
@@ -58,6 +59,16 @@ export default function App() {
           path="/EditPost"
           element={
             <EditPost
+              token={token}
+              targetPost={targetPost}
+              setTargetPost={setTargetPost}
+            />
+          }
+        />
+        <Route
+          path="/Message"
+          element={
+            <Message
               token={token}
               targetPost={targetPost}
               setTargetPost={setTargetPost}
