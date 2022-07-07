@@ -10,7 +10,14 @@ export default function SinglePost({ token, post, setTargetPost }) {
   return (
     <div id={post._id} className="postCard">
       <ul>
-        <li className="cardTitle">{post.title}</li>
+        <li
+          className="cardTitle"
+          onClick={() => {
+            navigate(`/${post._id}`);
+          }}
+        >
+          {post.title}
+        </li>
         <li>{post.description}</li>
         <li>Location: {post.location}</li>
         <li>{post.willDeliver ? "Free Delivery!" : "Pick it up yourself!"}</li>
@@ -18,7 +25,6 @@ export default function SinglePost({ token, post, setTargetPost }) {
         <li className="cardPrice">Price: {post.price}</li>
       </ul>
       <div className="messageButton">
-        {/* <button>Message This Seller!</button> */}
         {post.isAuthor ? (
           <div className="postFunctions">
             <button
@@ -31,9 +37,10 @@ export default function SinglePost({ token, post, setTargetPost }) {
             </button>
 
             <button
-              onClick={async (e) => {
-                const result = await deletePost(token, post);
-                window.location.reload(); // Not optimal to refresh page every delete, temporary fix!!
+              onClick={() => {
+                deletePost(token, post);
+                window.location.reload();
+                // Not optimal to refresh page every delete, temporary fix!!
               }}
             >
               Delete

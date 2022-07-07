@@ -8,21 +8,19 @@ export default function Login({ setToken, setCurrentUser }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   let navigate = useNavigate();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const result = await loginUser(username, password);
+    localStorage.setItem("token", result.data.token);
+    setToken(result.data.token);
+    setCurrentUser(username);
+    navigate("/Profile");
+  };
 
   return (
     <div className="login">
       <h3>Log In:</h3>
-      <form
-        className="formStyle"
-        onSubmit={async (e) => {
-          e.preventDefault();
-          const result = await loginUser(username, password);
-          localStorage.setItem("token", result.data.token);
-          setToken(result.data.token);
-          setCurrentUser(username);
-          navigate("/Profile");
-        }}
-      >
+      <form className="formStyle" onSubmit={handleSubmit}>
         <input
           value={username}
           placeholder="username"
