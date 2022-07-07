@@ -7,6 +7,7 @@ import {
   NewPost,
   EditPost,
   Message,
+  PostCard,
 } from "components";
 import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
@@ -77,6 +78,16 @@ export default function App() {
             <Message
               token={token}
               targetPost={targetPost}
+              setTargetPost={setTargetPost}
+            />
+          }
+        />
+        <Route
+          path="/posts/:_id"
+          element={
+            <PostCard
+              token={token}
+              post={targetPost}
               setTargetPost={setTargetPost}
             />
           }

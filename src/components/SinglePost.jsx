@@ -2,7 +2,7 @@ import React from "react";
 import { deletePost } from "api/posts";
 import { useNavigate } from "react-router-dom";
 
-export default function SinglePost({ token, post, setTargetPost, onProfile }) {
+export default function PostCard({ token, post, setTargetPost, onProfile }) {
   console.log("Current Post", post); // viewing each post
 
   let navigate = useNavigate();
@@ -13,7 +13,8 @@ export default function SinglePost({ token, post, setTargetPost, onProfile }) {
         <li
           className="cardTitle"
           onClick={() => {
-            navigate(`/${post._id}`);
+            setTargetPost(post);
+            navigate(`/posts/${post._id}`);
           }}
         >
           {post.title}

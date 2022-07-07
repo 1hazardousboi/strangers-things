@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { fetchPosts } from "api/posts";
-import SinglePost from "./SinglePost";
+import PostCard from "./SinglePost";
 
 export default function Home({ token, setTargetPost }) {
   const [posts, setPosts] = useState([]);
@@ -16,7 +16,7 @@ export default function Home({ token, setTargetPost }) {
     <div>
       {posts.map((post, index) => {
         return (
-          <SinglePost
+          <PostCard
             key={`Key: ${index}`}
             post={post}
             token={token}

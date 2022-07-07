@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
-import SinglePost from "./SinglePost";
+import PostCard from "./SinglePost";
 import { fetchProfile } from "api/posts";
 import SingleMessage from "./SingleMessage";
 
@@ -34,7 +34,7 @@ export default function Profile({ token, currentUser, setTargetPost }) {
       <div>
         {posts.map((post, index) => {
           return post.active ? (
-            <SinglePost
+            <PostCard
               key={`Key: ${index}`}
               post={post}
               token={token}

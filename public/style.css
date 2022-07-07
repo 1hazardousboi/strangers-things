@@ -33,6 +33,7 @@ nav * {
   align-items: center;
   padding-left: 20px;
   color: white;
+  text-decoration: none;
 }
 
 .login {

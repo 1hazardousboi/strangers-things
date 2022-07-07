@@ -4,7 +4,9 @@ import { Link } from "react-router-dom";
 export default function NavBar() {
   return (
     <header>
-      <div id="mainIcon">Strangers Things</div>
+      <Link to="/" id="mainIcon">
+        Strangers Things
+      </Link>
       <nav>
         <Link to="/">Home </Link>
         <Link to="/Profile">Profile </Link>
