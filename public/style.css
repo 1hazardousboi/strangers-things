@@ -92,6 +92,10 @@ ul {
   font-weight: bold;
 }
 
+.cardTitle:hover {
+  color: rgb(190, 158, 88);
+}
+
 .cardPrice {
   font-style: italic;
   font-weight: bold;

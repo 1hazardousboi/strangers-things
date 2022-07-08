@@ -38,7 +38,7 @@ export default function PostCard({ token, post, setTargetPost, onProfile }) {
             </button>
 
             <button
-              class="deleteButton"
+              className="deleteButton"
               onClick={() => {
                 deletePost(token, post);
                 window.location.reload();
