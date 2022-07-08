@@ -15,22 +15,24 @@ export default function Home({ token, setTargetPost }) {
   }, [token]);
 
   function postMatches(post, text) {
-    if (post.title.includes(text)) {
+    if (post.title.toLowerCase().includes(text)) {
       return true;
-    } else if (post.location?.includes(text)) {
+    } else if (post.location?.toLowerCase().includes(text)) {
       return true;
-    } else if (post.description?.includes(text)) {
+    } else if (post.description?.toLowerCase().includes(text)) {
       return true;
-    } else if (post.author?.username.includes(text)) {
+    } else if (post.author?.username.toLowerCase().includes(text)) {
       return true;
-    } else if (post.price?.includes(text)) {
+    } else if (post.price?.toLowerCase().includes(text)) {
       return true;
     } else {
       return false;
     }
   }
 
-  const filteredPosts = posts.filter((post) => postMatches(post, searchTerm));
+  const filteredPosts = posts.filter((post) =>
+    postMatches(post, searchTerm.toLowerCase())
+  );
   const postsToDisplay = searchTerm.length ? filteredPosts : posts;
 
   return (
