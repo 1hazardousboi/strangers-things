@@ -26,8 +26,9 @@ export default function EditPost({ token, targetPost, setTargetPost }) {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
+    <div className="newPost">
+      <h3>Edit Post</h3>
+      <form className="postForm" onSubmit={handleSubmit}>
         <input
           value={title}
           onChange={(e) => setTitle(e.target.value)}
@@ -48,12 +49,14 @@ export default function EditPost({ token, targetPost, setTargetPost }) {
           onChange={(e) => setLocation(e.target.value)}
           placeholder="Location"
         ></input>
-        <label htmlFor="willDeliver">Will Deliver?</label>
-        <input
-          value={willDeliver}
-          onChange={(e) => setWillDeliver(e.target.checked)}
-          type="checkbox"
-        ></input>
+        <div className="delivery">
+          <label htmlFor="willDeliver">Will Deliver?</label>
+          <input
+            value={willDeliver}
+            onChange={(e) => setWillDeliver(e.target.checked)}
+            type="checkbox"
+          ></input>
+        </div>
         <button className="submit" type="submit">
           Submit
         </button>

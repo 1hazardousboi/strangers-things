@@ -1,13 +1,6 @@
 import React from "react";
-// import { useNavigate } from "react-router-dom";
 
-export default function SingleMessage({
-  message,
-  //  post,
-  //  setTargetPost
-}) {
-  // let navigate = useNavigate();
-
+export default function SingleMessage({ message }) {
   return (
     <div className="messageCard">
       <ul>
@@ -15,16 +8,6 @@ export default function SingleMessage({
         <li className="messagePost">RE: {message.post.title}</li>
         <li className="messageBody">{message.content}</li>
       </ul>
-      {/* <button
-        onClick={() => {
-          setTargetPost(post);
-          navigate("/Message");
-        }}
-      >
-        Reply
-      </button> */}
     </div>
   );
 }
-
-// Reply button needs to be fixed!!

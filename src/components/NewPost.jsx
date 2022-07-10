@@ -23,34 +23,41 @@ export default function NewPost({ token }) {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
+    <div className="newPost">
+      <h3>New Post</h3>
+      <form className="postForm" onSubmit={handleSubmit}>
+        <label htmlFor="title">Title:</label>
         <input
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           placeholder="Title"
         ></input>
+        <label htmlFor="description">Description:</label>
         <input
           value={description}
           onChange={(e) => setDescription(e.target.value)}
           placeholder="Description"
         ></input>
-        <input
-          value={price}
-          onChange={(e) => setPrice(e.target.value)}
-          placeholder="Price"
-        ></input>
+        <label htmlFor="location">Location:</label>
         <input
           value={location}
           onChange={(e) => setLocation(e.target.value)}
           placeholder="Location"
         ></input>
-        <label htmlFor="willDeliver">Will Deliver?</label>
+        <label htmlFor="price">Price:</label>
         <input
-          value={willDeliver}
-          onChange={(e) => setWillDeliver(e.target.checked)}
-          type="checkbox"
+          value={price}
+          onChange={(e) => setPrice(e.target.value)}
+          placeholder="Price"
         ></input>
+        <div className="delivery">
+          <label htmlFor="willDeliver">Will Deliver?</label>
+          <input
+            value={willDeliver}
+            onChange={(e) => setWillDeliver(e.target.checked)}
+            type="checkbox"
+          ></input>
+        </div>
         <button className="submit" type="submit">
           Submit
         </button>

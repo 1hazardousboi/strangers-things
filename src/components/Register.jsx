@@ -19,7 +19,7 @@ export default function Register({ setToken, setCurrentUser }) {
   return (
     <div className="login">
       <h3>Register:</h3>
-      <form className="formStyle" onSubmit={handleSubmit}>
+      <form className="authForm" onSubmit={handleSubmit}>
         <input
           value={username}
           placeholder="username"

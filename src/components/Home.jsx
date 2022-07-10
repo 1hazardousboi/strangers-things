@@ -37,7 +37,7 @@ export default function Home({ token, setTargetPost }) {
 
   return (
     <div>
-      <form className="formStyle">
+      <form className="searchBar">
         <input
           value={searchTerm}
           placeholder="search here!"

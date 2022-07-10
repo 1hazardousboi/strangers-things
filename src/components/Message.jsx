@@ -13,14 +13,18 @@ export default function Message({ token, targetPost, setTargetPost }) {
   };
 
   return (
-    <div className="messageBox">
-      <form onSubmit={handleSubmit}>
+    <div className="newPost">
+      <h3>New Message</h3>
+      <h3>RE: {targetPost.title}</h3>
+      <form className="postForm" onSubmit={handleSubmit}>
         <input
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           placeholder="Your message here!"
         ></input>
-        <button type="submit">Submit Message!</button>
+        <button type="submit" className="submit">
+          Submit Message!
+        </button>
       </form>
     </div>
   );

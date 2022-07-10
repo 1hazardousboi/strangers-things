@@ -18,7 +18,7 @@ export default function Login({ setToken, setCurrentUser }) {
   return (
     <div className="login">
       <h3>Log In:</h3>
-      <form className="formStyle" onSubmit={handleSubmit}>
+      <form className="authForm" onSubmit={handleSubmit}>
         <input
           value={username}
           placeholder="username"
