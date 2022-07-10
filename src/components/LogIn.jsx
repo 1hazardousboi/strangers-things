@@ -5,14 +5,19 @@ import { Link, useNavigate } from "react-router-dom";
 export default function Login({ setToken, setCurrentUser }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
   let navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
     const result = await loginUser(username, password);
-    localStorage.setItem("token", result.data.token);
-    setToken(result.data.token);
-    setCurrentUser(username);
-    navigate("/Profile");
+    if (!result.success) {
+      setError(result.error.message);
+    } else {
+      localStorage.setItem("token", result.data.token);
+      setToken(result.data.token);
+      setCurrentUser(username);
+      navigate("/Profile");
+    }
   };
 
   return (
@@ -34,6 +39,7 @@ export default function Login({ setToken, setCurrentUser }) {
           Submit
         </button>
       </form>
+      {error ? <div className="error">{error}</div> : null}
       <Link className="loginHelper" to="/Register">
         Don't have an account?
       </Link>

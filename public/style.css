@@ -59,7 +59,7 @@ nav * {
 }
 
 .postForm input:hover,
-.authForm,
+.authForm :hover,
 .searchBar :hover {
   box-shadow: 3px 3px 3px rgb(233, 221, 195);
 }
@@ -144,4 +144,9 @@ button {
   flex-direction: row;
   justify-content: center;
   margin-bottom: 7px;
+}
+
+.error {
+  color: red;
+  font-size: small;
 }

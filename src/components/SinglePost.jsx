@@ -39,6 +39,7 @@ export default function PostCard({ token, post, setTargetPost, onProfile }) {
               className="deleteButton"
               onClick={() => {
                 deletePost(token, post);
+                window.location.reload();
               }}
             >
               Delete
