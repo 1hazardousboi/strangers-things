@@ -29,7 +29,7 @@ export default function App() {
     if (localStorageToken) {
       getMe();
     }
-  }, [token]); // Also update on page refresh? Happens after everything renders? Unsure if needs optimization.
+  }, [token]);
 
   return (
     <>
